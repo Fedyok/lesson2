@@ -1,8 +1,12 @@
-def st(ch, step):
-	k = ch
-	for i in range(step - 1):
-		ch = ch * k
-	return(ch)
+def st(ch, step): # функция для возведения данного числа в данную степень
+	k = ch # запишем изначальное число в отдельную переменную, так как само число будет в дальнейшем меняться
+	if step > 0:
+		for i in range(step - 1): # цикл для возведения числа в положительную степень
+			ch = ch * k
+		return(ch)
 
-
-print(st(2, 5))
+	else:
+		for i in range(abs(step) - 1): # цикл для возведения числа в отрицательную степень
+			ch = ch * k
+		return(1 / ch)
+print(st(2, -2))
